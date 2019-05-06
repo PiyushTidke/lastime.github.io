@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <form class="accountform" method="post" novalidate>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-md-5">
+          <h1 class="text-center"> Account Software</h1>
+          <label class="label">Name</label>
+          <div class="input-group">
+            <input type="text" class="form-control" name="nme" placeholder="Fullname">
+          </div>
+
+          <label class="label">contact</label>
+          <div class="input-group">
+            <input type="text" class="form-control" name="cnl" placeholder="Contact">
+          </div>
+
+          <label class="label">Address</label>
+          <div class="input-group">
+            <input type="text" class="form-control" name="ads" placeholder="Address">
+          </div>
+
+          <label class="inputcity"> Location</label>
+          <select class="form-control">
+            <option name="loc"> Select City</option>
+            <option>Akola</option>
+            <option>Akola East</option>
+            <option> Akot</option>
+            <option> Shegoan</option>
+            <option> BadhaPur</option>
+            <option> Badshitakli</option>
+            <option> Umari</option>
+            <option> Other City</option>
+          </select> <br>
+          <button type="submit" class="btn btn-primary"> Save & Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js">
+  </script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.accountform').validate({
+      rules:{
+        "fullname":"required",
+        "contact":{required: true, number: true, minlength: 10, maxlength: 10},
+        "address":{required: true,  minlength: 10, maxlength: 20},
+        "location":{required: true, location: true}
+      }, messages:{
+        "fullname":"please enter the full name",
+        "contact":"please enter the 10 digit mobile number",
+        "address":"please enter the address",
+        "location":"Please enter location"
+      }
+    });
+  });
+  </script>
+</body>
+</html>
